@@ -1,15 +1,12 @@
-var addBtn = document.querySelector('.addExpense');
-addBtn.addEventListener('click', addExpense);
+const expenseForm = document.querySelector('.expense-form');
+expenseForm.addEventListener('submit', addExpense);
 
-
+const dataTable = document.querySelector('.data-table');
 
 
 // add expense to table
 function addExpense(e){
   e.preventDefault();  
-
-
-  const dataTable = document.querySelector('.data-table');
 
   const currency = document.querySelector('.currency').value;
   const description = document.querySelector('.description').value;
@@ -27,7 +24,7 @@ function addExpense(e){
   // for each val in trackerArray, create new cell and append value
   for (i=0; i < trackerArray.length; i++){
     if (i === (trackerArray.length - 1)){
-      const newCell = newRow.insertCell(); // returns cell
+      const newCell = newRow.insertCell();
       const removeBtn = document.createElement('button');
       removeBtn.textContent = "X";
       removeBtn.addEventListener('click', removeExpense);
@@ -47,7 +44,3 @@ function removeExpense(e){
   console.log(e.target.parentElement.parentElement);
   dataTable.removeChild(e.target.parentElement.parentElement);
 }
-
-
-
-
