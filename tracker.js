@@ -1,21 +1,26 @@
 var addBtn = document.querySelector('.addExpense');
 addBtn.addEventListener('click', addExpense);
 
-const dataTable = document.querySelector('.data-table');
 
-const currency = document.querySelector('.currency').value;
-const description = document.querySelector('.description').value;
-const date = document.querySelector('.date').value;
-const amount = document.querySelector('.amount').value;
-const purchaseLocation = document.querySelector('.location').value;
 
-const removeBtn = document.createElement('button');
-
-const trackerArray = [currency, description, date, amount, purchaseLocation, removeBtn];
 
 // add expense to table
 function addExpense(e){
   e.preventDefault();  
+
+
+  const dataTable = document.querySelector('.data-table');
+
+  const currency = document.querySelector('.currency').value;
+  const description = document.querySelector('.description').value;
+  const date = document.querySelector('.date').value;
+  const amount = document.querySelector('.amount').value;
+  const purchaseLocation = document.querySelector('.location').value;
+  
+  const removeBtn = document.createElement('button');
+
+  const trackerArray = [currency, description, date, amount, purchaseLocation, removeBtn];
+
 
   const newRow = dataTable.insertRow();
 
