@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Expense Tracker</title>
+</head>
+<body>
+
+  <h1>Javascript Expense Tracker</h1>
+
+  <div class="container">
+    <form class="expense-form">
+      <label for="currency">Currency:</label>
+      <select class="currency" id="currency" required>
+        <option value="">Choose Currency</option>
+        <option value="Cash">Cash</option>
+        <option value="Card">Card</option>
+        <option value="Crypto">Cryptocurrency</option>
+        <option value="Other">Other</option>
+      </select> <br>
+  
+      <label for="description">Description:</label>
+      <input type="text" class="description" id="description" required> <br>
+  
+      <label for="date">Date:</label>
+      <input type="date" class="date" id="date" required> <br> 
+      
+      <label for="amount">Amount:</label>
+      <input type="number" class="amount" id="amount" required> <br>
+      
+      <label for="location">Location:</label>
+      <input type="text" class="location" id="location" required> <br>
+      
+      <input type="submit" value="Add Expense" class="addExpense">
+    </form>
+  
+    <br>
+  
+    <table class="table">
+      <thead class="table-header">
+        <tr class="headers">
+          <th>Currency</th>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Location</th>  
+          <th>Remove Expense</th>
+        </tr>
+      </thead>
+      <tbody class="data-table">
+
+      </tbody>
+    </table>
+  
+  </div>
+
+
+  <script src="tracker.js"></script>
+</body>
+</html>
