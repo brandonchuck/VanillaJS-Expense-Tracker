@@ -20,6 +20,7 @@ function addExpense(e){
 
 
   const newRow = dataTable.insertRow();
+  newRow.className = "row";
 
   // for each val in trackerArray, create new cell and append value
   for (i=0; i < trackerArray.length; i++){
@@ -27,6 +28,7 @@ function addExpense(e){
       const newCell = newRow.insertCell();
       const removeBtn = document.createElement('button');
       removeBtn.textContent = "X";
+      removeBtn.className = "remove-btn";
       removeBtn.addEventListener('click', removeExpense);
       newCell.appendChild(removeBtn);
     } else {

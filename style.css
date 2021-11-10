@@ -1,5 +1,7 @@
 table {
   border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
 }
 
 td,
@@ -7,4 +9,74 @@ th {
   border-width: 1px;
   border-color: black;
   border-style: solid;
+  padding: 10px;
+}
+
+body {
+  display: flex;
+  background-color: lavender;
+  flex-direction: column;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  align-content: space-around;
+}
+
+h1 {
+  font-size: 40pt;
+  margin-bottom: 5px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background-color: rgb(209, 199, 253);
+  border-radius: 5px;
+  width: 65%;
+  padding: 15px;
+}
+
+.container {
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.card .input-card {
+  padding: 15px;
+  width: 95%;
+  background-color: lightcoral;
+}
+
+select {
+  display: flex;
+  border-radius: 5px;
+  width: 100%;
+  align-self: center;
+}
+
+input {
+  display: flex;
+  border-radius: 5px;
+  align-self: center;
+  width: 100%;
+  height: 30px;
+}
+
+input.add-btn {
+  background-color: greenyellow;
+  /* align-self: center; */
+  text-align: end;
+}
+
+label {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 18pt;
 }

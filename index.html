@@ -11,50 +11,71 @@
 
   <h1>Javascript Expense Tracker</h1>
 
-  <div class="container">
-    <form class="expense-form">
-      <label for="currency">Currency:</label>
-      <select class="currency" id="currency" required>
-        <option value="">Choose Currency</option>
-        <option value="Cash">Cash</option>
-        <option value="Card">Card</option>
-        <option value="Crypto">Cryptocurrency</option>
-        <option value="Other">Other</option>
-      </select> <br>
-  
-      <label for="description">Description:</label>
-      <input type="text" class="description" id="description" required> <br>
-  
-      <label for="date">Date:</label>
-      <input type="date" class="date" id="date" required> <br> 
+  <div class="card">
+    <div class="container">
+      <form class="expense-form">
+
+        <div class="card input-card">
+          <label for="currency">Currency:
+            <select class="currency" id="currency" required>
+              <option value="">Choose Currency</option>
+              <option value="Cash">Cash</option>
+              <option value="Card">Card</option>
+              <option value="Crypto">Cryptocurrency</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+        </div>
+        
+        <div class="card input-card">
+          <label for="description">Description: 
+            <input type="text" class="description" id="description" required>
+          </label>
+        </div>
+    
+
+        <div class="card input-card">
+          <label for="date">Date:
+            <input type="date" class="date" id="date" required> 
+          </label>
+        </div>
+
+
+        <div class="card input-card">
+          <label for="amount">Amount:
+            <input type="number" class="amount" id="amount" required> 
+          </label>
+        </div>
+
+        
+        <div class="card input-card">
+          <label for="location">Location:
+            <input type="text" class="location" id="location" required> 
+          </label>
+        </div>
       
-      <label for="amount">Amount:</label>
-      <input type="number" class="amount" id="amount" required> <br>
-      
-      <label for="location">Location:</label>
-      <input type="text" class="location" id="location" required> <br>
-      
-      <input type="submit" value="Add Expense">
-    </form>
-  
-    <br>
+        <input type="submit" value="Add Expense" class="add-btn">
+      </form>
+    </div>
   </div>
 
-    <table class="table">
-      <thead class="table-header">
-        <tr class="headers">
-          <th>Currency</th>
-          <th>Description</th>
-          <th>Date</th>
-          <th>Amount</th>
-          <th>Location</th>  
-          <th>Remove Expense</th>
-        </tr>
-      </thead>
-      <tbody class="data-table">
 
-      </tbody>
-    </table>
+  <br>
+  <table class="table">
+    <thead class="table-header">
+      <tr class="headers">
+        <th>Currency</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Location</th>  
+        <th>Remove Expense</th>
+      </tr>
+    </thead>
+    <tbody class="data-table">
+
+    </tbody>
+  </table>
   
   <script src="tracker.js"></script>
 </body>
