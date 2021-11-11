@@ -1,48 +1,43 @@
-const expenseForm = document.querySelector('.expense-form');
-expenseForm.addEventListener('submit', addExpense);
+document.querySelector('.expense-form').addEventListener('submit', createRow);
 
-const dataTable = document.querySelector('.data-table');
+function createRow(e){
+  e.preventDefault();
 
-
-// add expense to table
-function addExpense(e){
-  e.preventDefault();  
-
+  // Input values
   const currency = document.querySelector('.currency').value;
   const description = document.querySelector('.description').value;
   const date = document.querySelector('.date').value;
   const amount = document.querySelector('.amount').value;
   const purchaseLocation = document.querySelector('.location').value;
-  
   const removeBtn = document.createElement('button');
-
-  const trackerArray = [currency, description, date, amount, purchaseLocation, removeBtn];
-
-
-  const newRow = dataTable.insertRow();
+  
+  const rowData = [currency, date, description, purchaseLocation, amount, removeBtn];
+  
+  const newRow = document.querySelector('.data-table').insertRow();
   newRow.className = "row";
 
-  // for each val in trackerArray, create new cell and append value
-  for (i=0; i < trackerArray.length; i++){
-    if (i === (trackerArray.length - 1)){
-      const newCell = newRow.insertCell();
-      const removeBtn = document.createElement('button');
-      removeBtn.textContent = "X";
-      removeBtn.className = "remove-btn";
-      removeBtn.addEventListener('click', removeExpense);
-      newCell.appendChild(removeBtn);
+  for (i = 0; i < rowData.length; i++){
+    const newCell = newRow.insertCell();
+
+    if (i === rowData.length - 1){
+      const removeButton = createRemoveButton(newRow);
+      newCell.appendChild(removeButton);
     } else {
-      const newCell = newRow.insertCell(); 
-      const newText = document.createTextNode(trackerArray[i]);
-      newCell.appendChild(newText);
+      newCell.textContent = rowData[i];
     }
   }
 }
 
-// remove expense from table
-function removeExpense(e){
-  e.preventDefault();
+function createRemoveButton(row){
+  const removeButton = document.createElement('button');
+  removeButton.textContent = "X";
+  removeButton.className = "remove-btn";
+  removeButton.addEventListener('click', () => {
+    removeExpense(row);
+  });
+  return removeButton;
+}
 
-  console.log(e.target.parentElement.parentElement);
-  dataTable.removeChild(e.target.parentElement.parentElement);
+function removeExpense(row){
+  row.remove();
 }
