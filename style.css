@@ -4,7 +4,6 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: monospace;
-  align-content: space-around;
 }
 
 h1 {
@@ -18,14 +17,13 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .expense-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   color: whitesmoke;
 }
 
@@ -37,8 +35,19 @@ h1 {
   padding: 15px;
   margin: 5px;
   display: flex;
-  align-items: center;
   border-radius: 5px;
+  flex-direction: row;
+  font-size: 18pt;
+  font-weight: bold;
+  align-items: center;
+}
+
+label {
+  display: flex;
+  align-self: center;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 18pt;
 }
 
 select {
@@ -50,8 +59,7 @@ select {
 input {
   display: flex;
   border-radius: 3px;
-  align-self: center;
-  width: 70%;
+  /* width: 70%; */
   height: 25px;
   border: none;
   text-decoration: none;
@@ -59,59 +67,66 @@ input {
 }
 
 .add-btn {
-  background-color: rgb(47, 231, 255);
+  background-color: rgb(111, 238, 255);
   width: 100%;
   padding: 10px;
   border: none;
   border-radius: 5px;
   font-size: 18pt;
+  font-weight: bold;
   font-family: monospace;
   color: black;
 }
 
 .remove-btn {
-  background-color: red;
+  background-color: rgb(255, 77, 77);
   border: none;
   border-radius: 3px;
   padding: 5px 20px;
 }
 
-label {
-  display: flex;
-  align-self: center;
-  font-family: monospace;
-  font-weight: bold;
-  font-size: 18pt;
-}
-
-div.table {
+.table-container {
   border: none;
-  border-radius: 3px;
+  border-radius: 5px;
+  font-family: monospace;
+  padding: 3px;
   background-color: whitesmoke;
+  margin-top: 10px;
+  margin-bottom: 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 
 table {
   border: none;
-  border-radius: 5px;
-  font-family: monospace;
+  border-radius: 3px;
+  background-color: whitesmoke;
   padding: 3px;
 }
 
 .table-header {
   color: black;
-  background-color: rgb(231, 231, 231);
+}
+
+#remove {
+  color: rgb(255, 77, 77);
+  text-decoration: underline;
+}
+
+tbody tr:nth-child(odd) {
+  background: rgb(231, 231, 231);
 }
 
 td,
 th {
-  /* border-width: 1px;
-  border-color: black;
-  border-style: solid; */
   font-size: 15pt;
-
   padding: 10px;
 }
 
-tbody tr:nth-child(even) {
-  background: rgb(231, 231, 231);
+.remove-cell {
+  text-align: center;
+}
+
+.data-cell {
+  text-align: center;
 }
