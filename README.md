@@ -7,7 +7,7 @@
 
 # Website
 
-- Here's a link to the website hosted via Github Pages! [https://brandonchuck.github.io/Project-4-ExpenseTracker/](https://brandonchuck.github.io/Project-4-ExpenseTracker/)
+- See it [here](https://brandonchuck.github.io/Project-4-ExpenseTracker/) on Github Pages! 
 
 # Preview
 
