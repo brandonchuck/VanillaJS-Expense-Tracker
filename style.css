@@ -108,11 +108,6 @@ table {
   color: black;
 }
 
-#remove {
-  color: rgb(255, 77, 77);
-  text-decoration: underline;
-}
-
 tbody tr:nth-child(odd) {
   background: rgb(231, 231, 231);
 }
@@ -123,10 +118,15 @@ th {
   padding: 10px;
 }
 
-.remove-cell {
+.data-cell {
   text-align: center;
 }
 
-.data-cell {
+#remove {
+  color: rgb(255, 77, 77);
+  text-decoration: underline;
+}
+
+#remove-cell {
   text-align: center;
 }

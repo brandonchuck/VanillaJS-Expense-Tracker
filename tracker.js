@@ -57,6 +57,7 @@ function addExpenseRow(expense) {
   const expenseLocationCell = createTableCell(expense.purchaseLocation);
   const expenseAmountCell = createTableCell(expense.amount);
   const deleteCell = createTableCell();
+  deleteCell.setAttribute("id", "remove-cell");
 
   // append cells to table row
   tableRow.appendChild(expenseTypeCell);
