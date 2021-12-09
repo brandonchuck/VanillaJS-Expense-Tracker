@@ -1,6 +1,6 @@
 const form = document.querySelector(".expense-form");
 
-// User Input values
+// User inputs
 const currency = document.querySelector(".currency");
 const date = document.querySelector(".date");
 const description = document.querySelector(".description");
@@ -12,6 +12,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const newExpense = {
+    id: Math.floor(Math.random() * 1000),
     currency: displayCurrency(currency.value),
     date: date.value,
     description: description.value,
@@ -24,32 +25,30 @@ form.addEventListener("submit", (e) => {
 
 function addExpense(expense) {
   addExpenseRow(expense);
-  expenseArray = getExpenseArray(); // returns expenses in local storage
+  expenseArray = getExpenseArray();
   expenseArray.push(expense);
   saveExpense(expenseArray);
 }
 
-// getter for expense array in local storage
 function getExpenseArray() {
   return JSON.parse(localStorage.getItem("expenseArray")) || [];
 }
 
-// setter for expense array in local storage
+// set expenseArray in local storage
 function saveExpense(array) {
   localStorage.setItem("expenseArray", JSON.stringify(array));
 }
 
-// generate new table row
 function createTableRow() {
-  const tableRow = document.createElement("tr"); // create table row
+  const tableRow = document.createElement("tr");
   tableRow.setAttribute("class", "row");
   return tableRow;
 }
 
 function addExpenseRow(expense) {
-  const tableBody = document.getElementById("data-table"); // grab table body from html
-  const tableRow = createTableRow(); // create table row
-  tableBody.appendChild(tableRow); // append row to table body
+  const tableBody = document.getElementById("data-table");
+  const tableRow = createTableRow();
+  tableBody.appendChild(tableRow);
 
   // create cells
   const expenseTypeCell = createTableCell(expense.currency);
@@ -91,12 +90,13 @@ function createDeleteButton(expense) {
 
 function removeExpense(element, id) {
   element.parentElement.parentElement.remove(); // remove expense from DOM
+
+  // remove expense from local storage
   expenseArray = getExpenseArray();
   expenseArray = expenseArray.filter((expense) => {
-    // remove expense from local storage
     return expense.id !== id;
   });
-  saveExpense(expenseArray); // override expense array in local storage with shortened array
+  saveExpense(expenseArray); // save modified array to local storage
 }
 
 function formatAmount(amount) {
@@ -120,6 +120,6 @@ window.addEventListener("load", (e) => {
   e.preventDefault();
   expenseArray = getExpenseArray();
   expenseArray.forEach((expense) => {
-    addExpenseRow(expense); // grabs expense rows in local storage and adds them back to table using addExpenseRow function
+    addExpenseRow(expense);
   });
 });
