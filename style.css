@@ -78,7 +78,7 @@ input {
   color: black;
 }
 
-.remove-btn {
+.delete-btn {
   background-color: rgb(255, 77, 77);
   border: none;
   border-radius: 3px;
