@@ -60,12 +60,12 @@ function addExpenseRow(expense) {
   const deleteCell = createTableCell();
 
   // append cells to table row
-  tableBody.appendChild(expenseTypeCell);
-  tableBody.appendChild(expenseDateCell);
-  tableBody.appendChild(expenseDescriptionCell);
-  tableBody.appendChild(expenseLocationCell);
-  tableBody.appendChild(expenseAmountCell);
-  tableBody.appendChild(deleteCell);
+  tableRow.appendChild(expenseTypeCell);
+  tableRow.appendChild(expenseDateCell);
+  tableRow.appendChild(expenseDescriptionCell);
+  tableRow.appendChild(expenseLocationCell);
+  tableRow.appendChild(expenseAmountCell);
+  tableRow.appendChild(deleteCell);
 
   const deletebutton = createDeleteButton(expense);
   deleteCell.appendChild(deletebutton);
@@ -93,6 +93,7 @@ function removeExpense(element, id) {
   element.parentElement.parentElement.remove(); // remove expense from DOM
   expenseArray = getExpenseArray();
   expenseArray = expenseArray.filter((expense) => {
+    // remove expense from local storage
     return expense.id !== id;
   });
   saveExpense(expenseArray); // override expense array in local storage with shortened array
