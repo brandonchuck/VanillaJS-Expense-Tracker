@@ -7,7 +7,7 @@
 
 # Website
 
-- See it [here](https://brandonchuck.github.io/Project-4-ExpenseTracker/) on Github Pages! 
+- See it [here](https://brandonchuck.github.io/VanillaJS-Expense-Tracker/) on Github Pages! 
 
 # Preview
 
