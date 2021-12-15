@@ -3,7 +3,7 @@
 # Overview
 
 - Simple Expense Tracker application built entirely with HTML, CSS, and Javascript.
-- Webpage showcases several inputs for tabularly tracking your expenses.
+- Showcases several inputs for tabularly tracking your expenses.
 
 # Website
 
